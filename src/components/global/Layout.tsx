@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import GNB from './GNB';
 import THEME from 'constants/Colors';
 
 type props = {
@@ -10,10 +9,7 @@ type props = {
 const Layout = ({ children }: props) => {
   return (
     <Wrapper>
-      <Container>
-        {children}
-        <GNB />
-      </Container>
+      <Container>{children}</Container>
     </Wrapper>
   );
 };

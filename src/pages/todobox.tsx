@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import GNB from 'src/components/global/GNB';
+import GNB from '../components/global/GNB';
 
 type Props = {};
 

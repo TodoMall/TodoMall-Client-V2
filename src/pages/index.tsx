@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import Login from 'src/components/login/Login';
-import SplashScreen from 'src/components/login/SplashScreen';
+import Login from '../components/login/Login';
+import SplashScreen from '../components/login/SplashScreen';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);

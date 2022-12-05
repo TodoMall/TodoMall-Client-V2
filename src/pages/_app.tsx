@@ -2,7 +2,7 @@ import 'styles/globals.css';
 import type { AppProps } from 'next/app';
 import { RecoilRoot } from 'recoil';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import Layout from 'src/components/global/Layout';
+import Layout from '../components/global/Layout';
 import { ReactElement, ReactNode } from 'react';
 import { NextPage } from 'next';
 

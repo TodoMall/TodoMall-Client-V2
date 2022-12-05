@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import Button from 'src/components/global/Button';
-import GNB from 'src/components/global/GNB';
+import Button from '../components/global/Button';
+import GNB from '../components/global/GNB';
 
 type Props = {};
 

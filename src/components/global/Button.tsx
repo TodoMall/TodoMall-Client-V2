@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import THEME from 'constants/Colors';
+import THEME from '../../../constants/Colors';
 import React from 'react';
 
 type Props = {

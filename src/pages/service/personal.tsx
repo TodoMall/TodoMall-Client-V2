@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import Header from 'src/components/global/Header';
+import Header from '../../components/global/Header';
 
 export default function Personal() {
   const HTML = `

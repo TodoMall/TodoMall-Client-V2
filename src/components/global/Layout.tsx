@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import GNB from './GNB';
-import SPACING from 'constants/Spacing';
+import SPACING from '../../../constants/Spacing';
 
 type props = {
   children: React.ReactNode;

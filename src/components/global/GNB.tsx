@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import THEME from 'constants/Colors';
-import SPACING from 'constants/Spacing';
+import THEME from '../../../constants/Colors';
+import SPACING from '../../../constants/Spacing';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { MypageIcon, TodoBoxIcon, TodoMallIcon } from './Icons';

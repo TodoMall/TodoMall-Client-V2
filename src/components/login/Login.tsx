@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { GoogleIcon, KakaoIcon } from '../global/Icons';
 import { motion } from 'framer-motion';
-import SPACING from 'constants/Spacing';
+import SPACING from '../../../constants/Spacing';
 
 type Props = {};
 

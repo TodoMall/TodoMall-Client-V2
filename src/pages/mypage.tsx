@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import GNB from 'src/components/global/GNB';
-import Header from 'src/components/global/Header';
+import GNB from '../components/global/GNB';
+import Header from '../components/global/Header';
 
 type Props = {};
 

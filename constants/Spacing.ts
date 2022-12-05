@@ -7,6 +7,8 @@ const SPACING = {
   SPACING500: 20,
   SPACING600: 24,
   SPACING700: 32,
+
+  MAXWIDTH: 950,
 };
 
 export default SPACING;

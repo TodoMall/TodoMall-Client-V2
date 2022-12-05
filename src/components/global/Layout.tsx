@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import THEME from 'constants/Colors';
+import GNB from './GNB';
+import SPACING from 'constants/Spacing';
 
 type props = {
   children: React.ReactNode;
@@ -15,25 +16,20 @@ const Layout = ({ children }: props) => {
 };
 
 const Wrapper = styled.div`
-  height: 100%;
   width: 100%;
-  max-height: 100%;
+  height: 100vh;
   z-index: 100;
-  display: flex;
-  justify-content: center;
-  background: ${THEME.PURPLE50};
+  background: #d2c6ff;
 `;
 
 const Container = styled.div`
-  max-width: 950px;
-  width: 100%;
-  height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  background: #fbfbfb;
-  color: #fff;
   position: relative;
-  backdrop-filter: blur(10px);
+  max-width: ${SPACING.MAXWIDTH}px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 0 auto;
+  background: #fbfbfb;
   ::-webkit-scrollbar {
     width: 0;
     height: 0;

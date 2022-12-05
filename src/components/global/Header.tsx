@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import THEME from 'constants/Colors';
+import SPACING from 'constants/Spacing';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { BackArrowIcon } from './Icons';
@@ -25,23 +26,20 @@ const Header = ({ title }: Props) => {
 };
 
 const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: 50px;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: ${THEME.BACKGROUND1};
   position: fixed;
+  width: 100%;
+  max-width: ${SPACING.MAXWIDTH}px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${THEME.BACKGROUND1};
 `;
 
 const BackArrow = styled.div`
   position: absolute;
   left: 20px;
-  top: 20px;
+  top: 15px;
 `;
 
 const HeaderTitle = styled.p`

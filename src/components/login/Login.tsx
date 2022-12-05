@@ -33,7 +33,8 @@ const LoginButtons = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: ${SPACING.SPACING400}px;
+  gap: ${SPACING.SPACING200}px;
+  z-index: 1;
 `;
 
 const CompanyName = styled.p`
@@ -42,7 +43,7 @@ const CompanyName = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
-  margin-top: ${SPACING.SPACING400}px;
+  margin-top: ${SPACING.SPACING200}px;
 `;
 
 const BackgroundImage = styled.img`
@@ -50,7 +51,7 @@ const BackgroundImage = styled.img`
   bottom: 0px;
   width: 110%;
   max-width: 450px;
-  z-index: -1;
+  z-index: 0;
   overflow: hidden;
 `;
 

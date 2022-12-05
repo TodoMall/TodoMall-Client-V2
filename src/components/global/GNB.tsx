@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import THEME from 'constants/Colors';
+import SPACING from 'constants/Spacing';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { MypageIcon, TodoBoxIcon, TodoMallIcon } from './Icons';
@@ -41,13 +42,15 @@ const GNB = (props: Props) => {
 };
 
 const NavBar = styled.footer`
+  position: fixed;
   display: flex;
   align-items: center;
   height: 56px;
   padding-top: 1px;
   padding-bottom: 34px;
-  margin: 0 20px;
-  position: fixed;
+  margin: 0 auto;
+  width: 100%;
+  max-width: ${SPACING.MAXWIDTH}px;
   z-index: 10;
   left: 0;
   right: 0;

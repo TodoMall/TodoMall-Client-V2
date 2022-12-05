@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import THEME from 'constants/Colors';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { Mypage, TodoBox, TodoMall } from './Icons';
+import { MypageIcon, TodoBoxIcon, TodoMallIcon } from './Icons';
 
 type Props = {};
 
@@ -10,7 +10,7 @@ const GNB = (props: Props) => {
   const router = useRouter();
 
   const handleClick = (route: string) => {
-    router.push(route);
+    router.replace(route);
   };
 
   return (
@@ -19,21 +19,21 @@ const GNB = (props: Props) => {
         onClick={() => {
           handleClick('/todobox');
         }}>
-        <TodoBox selected={router.asPath === '/todobox'} />
+        <TodoBoxIcon selected={router.asPath === '/todobox'} />
         <Title active={router.asPath === '/todobox'}>투두함</Title>
       </Column>
       <Column
         onClick={() => {
           handleClick('/todomall');
         }}>
-        <TodoMall selected={router.asPath === '/todomall'} />
+        <TodoMallIcon selected={router.asPath === '/todomall'} />
         <Title active={router.asPath === '/todomall'}>투두몰</Title>
       </Column>
       <Column
         onClick={() => {
           handleClick('/mypage');
         }}>
-        <Mypage selected={router.asPath === '/mypage'} />
+        <MypageIcon selected={router.asPath === '/mypage'} />
         <Title active={router.asPath === '/mypage'}>내 기록</Title>
       </Column>
     </NavBar>

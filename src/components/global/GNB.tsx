@@ -1,24 +1,40 @@
 import styled from '@emotion/styled';
 import THEME from 'constants/Colors';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { Mypage, TodoBox, TodoMall } from './Icons';
 
 type Props = {};
 
 const GNB = (props: Props) => {
+  const router = useRouter();
+
+  const handleClick = (route: string) => {
+    router.push(route);
+  };
+
   return (
     <NavBar>
-      <Column>
-        <TodoBox />
-        <Title active={false}>투두함</Title>
+      <Column
+        onClick={() => {
+          handleClick('/todobox');
+        }}>
+        <TodoBox selected={router.asPath === '/todobox'} />
+        <Title active={router.asPath === '/todobox'}>투두함</Title>
       </Column>
-      <Column>
-        <TodoMall selected />
-        <Title active={true}>투두몰</Title>
+      <Column
+        onClick={() => {
+          handleClick('/todomall');
+        }}>
+        <TodoMall selected={router.asPath === '/todomall'} />
+        <Title active={router.asPath === '/todomall'}>투두몰</Title>
       </Column>
-      <Column>
-        <Mypage />
-        <Title active={false}>내 기록</Title>
+      <Column
+        onClick={() => {
+          handleClick('/mypage');
+        }}>
+        <Mypage selected={router.asPath === '/mypage'} />
+        <Title active={router.asPath === '/mypage'}>내 기록</Title>
       </Column>
     </NavBar>
   );
@@ -28,9 +44,11 @@ const NavBar = styled.footer`
   display: flex;
   align-items: center;
   height: 56px;
+  padding-top: 1px;
   padding-bottom: 34px;
+  margin: 0 20px;
   position: fixed;
-  z-index: 100000;
+  z-index: 10;
   left: 0;
   right: 0;
   bottom: 0px;

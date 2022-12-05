@@ -4,14 +4,18 @@ import React from 'react';
 import SplashLogo from 'public/assets/SplashLogo.png';
 import { motion, AnimatePresence } from 'framer-motion';
 
-type Props = {};
-
-const SplashScreen = (props: Props) => {
+const SplashScreen = () => {
   return (
     <Wrapper>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-        <Image alt="logo" src={SplashLogo} width={180} height={50} />
-      </motion.div>
+      <AnimatePresence>
+        <motion.div
+          key="logo"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 1, 1, 0] }}
+          transition={{ duration: 2.1, times: [0, 0.2, 0.8, 1] }}>
+          <Image alt="logo" src={SplashLogo} width={205} height={60} />
+        </motion.div>
+      </AnimatePresence>
     </Wrapper>
   );
 };

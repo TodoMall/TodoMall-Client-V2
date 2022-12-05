@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import THEME from 'constants/Colors';
 import React from 'react';
 
 type Props = {};
@@ -22,20 +23,20 @@ const NavBar = styled.footer`
   left: 0;
   right: 0;
   bottom: 0px;
-  background-color: #fbfbfb;
+  background-color: ${THEME.BACKGROUND1};
 `;
 
 const Column = styled.div<{ active: boolean }>`
   text-align: center;
   border: none;
-  background: ${(props) => (props.active ? '#d2c6ff' : '#fbfbfb')};
+  background: ${(props) => (props.active ? `${THEME.PURPLE500}` : `${THEME.BACKGROUND1}`)};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 4px;
   font-size: 0.8rem;
-  color: ${(props) => (props.active ? '#d2c6ff' : '#fbfbfb')};
+  color: ${(props) => (props.active ? `${THEME.PURPLE500}` : `${THEME.BACKGROUND1}`)};
 `;
 
 export default GNB;

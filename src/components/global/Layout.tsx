@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import GNB from './GNB';
+import THEME from 'constants/Colors';
 
 type props = {
   children: React.ReactNode;
@@ -24,7 +25,7 @@ const Wrapper = styled.div`
   z-index: 100;
   display: flex;
   justify-content: center;
-  background: #d2c6ff;
+  background: ${THEME.PURPLE50};
 `;
 
 const Container = styled.div`

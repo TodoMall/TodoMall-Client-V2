@@ -14,7 +14,7 @@ type Props = {
 const Button = ({ primary = false, large = false, rounder = false, disabled = false, border = false, text }: Props) => {
   return (
     <Wrapper primary={primary} large={large} rounder={rounder} disabled={disabled} border={border}>
-      <Text primary={primary} border={border}>
+      <Text primary={primary} border={border} disabled={disabled}>
         {text}
       </Text>
     </Wrapper>
@@ -38,8 +38,9 @@ const Wrapper = styled.div<{ primary: boolean; large: boolean; rounder: boolean;
   }
 `;
 
-const Text = styled.p<{ primary: boolean; border: boolean }>`
-  color: ${(props) => (props.primary ? (props.border ? THEME.PURPLE500 : THEME.WHITE) : THEME.GRAY500)};
+const Text = styled.p<{ primary: boolean; border: boolean; disabled: boolean }>`
+  color: ${(props) =>
+    props.disabled ? THEME.WHITE : props.primary ? (props.border ? THEME.PURPLE500 : THEME.WHITE) : THEME.GRAY500};
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 500;

@@ -29,6 +29,7 @@ const Wrapper = styled(motion.div)`
 `;
 
 const LoginButtons = styled.div`
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;

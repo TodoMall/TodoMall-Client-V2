@@ -6,7 +6,7 @@ import SPACING from '../../../constants/Spacing';
 
 const Login = () => {
   return (
-    <Wrapper initial={{ y: 200, opacity: 0 }} transition={{ duration: 1 }} whileInView={{ opacity: 1, y: 0 }}>
+    <Wrapper initial={{ y: 200, opacity: 0 }} transition={{ duration: 1 }} whileInView={{ opacity: 1, y: 10 }}>
       <LoginButtons>
         <KakaoIcon />
         <GoogleIcon />
@@ -23,6 +23,7 @@ const Wrapper = styled(motion.div)`
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  overflow-y: hidden;
 `;
 
 const LoginButtons = styled.div`
@@ -33,7 +34,7 @@ const LoginButtons = styled.div`
   justify-content: center;
   gap: ${SPACING.SPACING200}px;
   z-index: 1;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
 `;
 
 const CompanyName = styled.p`

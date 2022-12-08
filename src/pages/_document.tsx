@@ -27,6 +27,18 @@ class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#6B47FD" />
           <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png" />
           <meta name="theme-color" content="#6B47FD" />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+          <meta name="application-name" content="KIDA" />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+          <meta name="apple-mobile-web-app-title" content="TodoMall" />
+          <meta name="description" content="TodoMall" />
+          <meta name="format-detection" content="telephone=no" />
+          <meta name="mobile-web-app-capable" content="yes" />
+          <meta name="msapplication-TileColor" content="#FBFBFB" />
+          <meta name="msapplication-tap-highlight" content="no" />
+          <meta name="theme-color" content="#6B47FD" />
         </Head>
         <body>
           <Main />

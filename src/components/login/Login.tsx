@@ -19,7 +19,8 @@ const Login = () => {
 
 const Wrapper = styled(motion.div)`
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  overflow-y: hidden;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -33,7 +34,7 @@ const LoginButtons = styled.div`
   justify-content: center;
   gap: ${SPACING.SPACING200}px;
   z-index: 1;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
 `;
 
 const CompanyName = styled.p`
@@ -47,10 +48,10 @@ const CompanyName = styled.p`
 
 const BackgroundImage = styled.img`
   position: fixed;
-  bottom: 0px;
+  bottom: -40px;
   width: 110%;
   max-width: 450px;
-  z-index: 0;
+  z-index: -1;
   overflow: hidden;
 `;
 

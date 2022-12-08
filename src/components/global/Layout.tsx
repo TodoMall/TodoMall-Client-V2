@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import SPACING from '../../../constants/Spacing';
 
 interface Props {
   children: React.ReactNode;
@@ -19,13 +18,13 @@ const Wrapper = styled.div`
   height: 100vh;
   overflow-x: hidden;
   overflow-y: hidden;
-  z-index: 100;
   background: #d2c6ff;
 `;
 
 const Container = styled.div`
   position: relative;
-  max-width: ${SPACING.MAXWIDTH}px;
+  width: min(100%, 59.375rem);
+  margin-inline: auto;
   height: 100%;
   overflow-x: hidden;
   overflow-y: hidden;

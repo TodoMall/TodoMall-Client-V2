@@ -24,9 +24,9 @@ class MyDocument extends Document {
           <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
           <link rel="manifest" href="/manifest.json" />
-          <meta name="msapplication-TileColor" content="#6B47FD" />
+          <meta name="msapplication-TileColor" content="#FBFBFB" />
           <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png" />
-          <meta name="theme-color" content="#6B47FD" />
+          <meta name="theme-color" content="#FBFBFB" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
           <meta name="application-name" content="KIDA" />
@@ -38,7 +38,7 @@ class MyDocument extends Document {
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="msapplication-TileColor" content="#FBFBFB" />
           <meta name="msapplication-tap-highlight" content="no" />
-          <meta name="theme-color" content="#6B47FD" />
+          <meta name="theme-color" content="#FBFBFB" />
         </Head>
         <body>
           <Main />

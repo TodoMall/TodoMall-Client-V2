@@ -3,13 +3,20 @@ import styled from '@emotion/styled';
 import { GoogleIcon, KakaoIcon } from '../icons/LoginIcons';
 import { motion } from 'framer-motion';
 import SPACING from '../../../constants/Spacing';
+import { useRouter } from 'next/router';
 
 const Login = () => {
+  const { push } = useRouter();
+
+  const handleClick = () => {
+    push('/todomall');
+  };
+
   return (
-    <Wrapper initial={{ y: 200, opacity: 0 }} transition={{ duration: 1 }} whileInView={{ opacity: 1, y: 10 }}>
+    <Wrapper initial={{ y: 200, opacity: 0 }} transition={{ duration: 1 }} whileInView={{ opacity: 1, y: 0 }}>
       <LoginButtons>
-        <KakaoIcon />
-        <GoogleIcon />
+        <KakaoIcon onClick={handleClick} />
+        <GoogleIcon onClick={handleClick} />
         <CompanyName>c. myplanit</CompanyName>
       </LoginButtons>
       <BackgroundImage src="/assets/LoginLogo.png" />
@@ -51,7 +58,6 @@ const BackgroundImage = styled.img`
   bottom: -40px;
   width: 110%;
   max-width: 450px;
-  z-index: -1;
   overflow: hidden;
 `;
 

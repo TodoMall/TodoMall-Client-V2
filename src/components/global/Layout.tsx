@@ -14,26 +14,18 @@ const Layout = ({ children }: Props) => {
 };
 
 const Wrapper = styled.div`
+  position: fixed;
   width: 100%;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  height: 100%;
   background: #d2c6ff;
 `;
 
 const Container = styled.div`
   position: relative;
   width: min(100%, 59.375rem);
-  margin-inline: auto;
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
   margin: 0 auto;
   background: #fbfbfb;
-  ::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-  }
 `;
 
 export default Layout;

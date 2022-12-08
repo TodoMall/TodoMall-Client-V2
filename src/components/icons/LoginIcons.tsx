@@ -1,7 +1,7 @@
-import THEME from '../../../constants/Colors';
+import React from 'react';
 
-export const KakaoIcon = () => (
-  <svg width="343" height="52" viewBox="0 0 343 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const KakaoIcon = ({ onClick }: { onClick: () => void }) => (
+  <svg onClick={onClick} width="343" height="52" viewBox="0 0 343 52" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="343" height="52" rx="4" fill="#FEE500" />
     <g clip-path="url(#clip0_2384_7113)">
       <path
@@ -21,8 +21,8 @@ export const KakaoIcon = () => (
   </svg>
 );
 
-export const GoogleIcon = () => (
-  <svg width="343" height="52" viewBox="0 0 343 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const GoogleIcon = ({ onClick }: { onClick: () => void }) => (
+  <svg onClick={onClick} width="343" height="52" viewBox="0 0 343 52" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="343" height="52" rx="4" fill="white" />
     <g clip-path="url(#clip0_2384_7122)">
       <path

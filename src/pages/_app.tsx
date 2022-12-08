@@ -4,6 +4,7 @@ import { RecoilRoot } from 'recoil';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Layout from '../components/global/Layout';
 import Head from 'next/head';
+import React from 'react';
 
 const queryClient = new ApolloClient({
   uri: 'http://localhost:8000/',

@@ -3,30 +3,29 @@ import type { AppProps } from 'next/app';
 import { RecoilRoot } from 'recoil';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Layout from '../components/global/Layout';
-import { ReactElement, ReactNode } from 'react';
-import { NextPage } from 'next';
-
-export type NextPageWithLayout<T> = NextPage<T> & {
-  getLayout?: (page: ReactElement) => ReactNode;
-};
-
-interface MyAppProps extends AppProps {
-  Component: NextPageWithLayout<any>;
-}
+import Head from 'next/head';
 
 const queryClient = new ApolloClient({
   uri: 'http://localhost:8000/',
   cache: new InMemoryCache(),
 });
 
-export default function App({ Component, pageProps }: MyAppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ApolloProvider client={queryClient}>
-      <RecoilRoot>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </RecoilRoot>
-    </ApolloProvider>
+    <>
+      <Head>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+        />
+      </Head>
+      <ApolloProvider client={queryClient}>
+        <RecoilRoot>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </RecoilRoot>
+      </ApolloProvider>
+    </>
   );
 }

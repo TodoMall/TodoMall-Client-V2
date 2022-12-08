@@ -9,6 +9,6 @@ const SPACING = {
   SPACING700: 32,
 
   MAXWIDTH: 950,
-};
+} as const;
 
 export default SPACING;

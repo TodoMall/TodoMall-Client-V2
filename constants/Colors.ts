@@ -29,6 +29,6 @@ const THEME = {
 
   BACKGROUND1: '#FBFBFB',
   BACKGROUND2: '#FAFAFF',
-};
+} as const;
 
 export default THEME;

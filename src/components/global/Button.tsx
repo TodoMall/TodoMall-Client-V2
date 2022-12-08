@@ -2,14 +2,14 @@ import styled from '@emotion/styled';
 import THEME from '../../../constants/Colors';
 import React from 'react';
 
-type Props = {
+interface Props {
   primary?: boolean;
   large?: boolean;
   rounder?: boolean;
   disabled?: boolean;
   border?: boolean;
   text: string;
-};
+}
 
 const Button = ({ primary = false, large = false, rounder = false, disabled = false, border = false, text }: Props) => {
   return (

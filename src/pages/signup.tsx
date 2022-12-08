@@ -4,14 +4,12 @@ import Header from '../components/global/Header';
 type Props = {};
 
 const Signup = (props: Props) => {
-  return <div>Signup</div>;
+  return (
+    <>
+      <Header title="회원 가입" />
+      <div>Signup</div>
+    </>
+  );
 };
-
-Signup.getLayout = (page: ReactNode) => (
-  <>
-    <Header title="회원 가입" />
-    {page}
-  </>
-);
 
 export default Signup;

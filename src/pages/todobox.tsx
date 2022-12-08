@@ -4,13 +4,12 @@ import GNB from '../components/global/GNB';
 type Props = {};
 
 const todobox = (props: Props) => {
-  return <div>todobox</div>;
+  return (
+    <>
+      <div>todobox</div>
+      <GNB />
+    </>
+  );
 };
 
-todobox.getLayout = (page: ReactNode) => (
-  <>
-    {page}
-    <GNB />
-  </>
-);
 export default todobox;

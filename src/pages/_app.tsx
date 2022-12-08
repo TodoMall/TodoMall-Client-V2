@@ -20,11 +20,12 @@ const queryClient = new ApolloClient({
 });
 
 export default function App({ Component, pageProps }: MyAppProps) {
-  const getLayout = Component.getLayout ? Component.getLayout : (page: ReactNode) => page;
   return (
     <ApolloProvider client={queryClient}>
       <RecoilRoot>
-        <Layout>{getLayout(<Component {...pageProps} />)}</Layout>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </RecoilRoot>
     </ApolloProvider>
   );

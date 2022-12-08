@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import GNB from './GNB';
 import SPACING from '../../../constants/Spacing';
 
-type props = {
+interface Props {
   children: React.ReactNode;
-};
+}
 
-const Layout = ({ children }: props) => {
+const Layout = ({ children }: Props) => {
   return (
     <Wrapper>
       <Container>{children}</Container>
@@ -27,7 +26,7 @@ const Container = styled.div`
   max-width: ${SPACING.MAXWIDTH}px;
   height: 100vh;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   margin: 0 auto;
   background: #fbfbfb;
   ::-webkit-scrollbar {

@@ -3,23 +3,23 @@ import THEME from '../../../constants/Colors';
 import SPACING from '../../../constants/Spacing';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { BackArrowIcon } from './Icons';
+import { BackArrowIcon } from '../icons/GlobalIcons';
 
-type Props = {
+interface Props {
   title: string;
-};
+}
 
 const Header = ({ title }: Props) => {
   const router = useRouter();
 
   return (
     <Wrapper>
-      <BackArrow
+      <BackArrowButton
         onClick={() => {
           router.back();
         }}>
         <BackArrowIcon />
-      </BackArrow>
+      </BackArrowButton>
       <HeaderTitle>{title}</HeaderTitle>
     </Wrapper>
   );
@@ -36,7 +36,7 @@ const Wrapper = styled.div`
   background-color: ${THEME.BACKGROUND1};
 `;
 
-const BackArrow = styled.div`
+const BackArrowButton = styled.div`
   position: absolute;
   left: 20px;
   top: 15px;

@@ -3,20 +3,18 @@ import THEME from '../../../constants/Colors';
 import SPACING from '../../../constants/Spacing';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { MypageIcon, TodoBoxIcon, TodoMallIcon } from './Icons';
+import { MypageIcon, TodoBoxIcon, TodoMallIcon } from '../icons/GNBIcons';
 import { PATHS } from '../../../constants/Paths';
 
-type Props = {};
-
-const GNB = (props: Props) => {
-  const { replace, asPath } = useRouter();
+const GNB = () => {
+  const { replace, pathname } = useRouter();
 
   const handleClick = (path: string) => {
     replace(path);
   };
 
   const checkPath = (path: string) => {
-    return asPath === path;
+    return pathname === path;
   };
 
   return (
@@ -56,7 +54,6 @@ const NavBar = styled.footer`
   margin: 0 auto;
   width: 100%;
   max-width: ${SPACING.MAXWIDTH}px;
-  z-index: 10;
   left: 0;
   right: 0;
   bottom: 0px;

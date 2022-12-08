@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { GoogleIcon, KakaoIcon } from '../global/Icons';
+import { GoogleIcon, KakaoIcon } from '../icons/LoginIcons';
 import { motion } from 'framer-motion';
 import SPACING from '../../../constants/Spacing';
 
-type Props = {};
-
-const Login = (props: Props) => {
+const Login = () => {
   return (
     <Wrapper initial={{ y: 200, opacity: 0 }} transition={{ duration: 1 }} whileInView={{ opacity: 1, y: 0 }}>
       <LoginButtons>
@@ -25,7 +23,6 @@ const Wrapper = styled(motion.div)`
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: 40px;
 `;
 
 const LoginButtons = styled.div`
@@ -36,6 +33,7 @@ const LoginButtons = styled.div`
   justify-content: center;
   gap: ${SPACING.SPACING200}px;
   z-index: 1;
+  padding-bottom: 40px;
 `;
 
 const CompanyName = styled.p`

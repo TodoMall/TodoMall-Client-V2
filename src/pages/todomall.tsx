@@ -5,14 +5,12 @@ import GNB from '../components/global/GNB';
 type Props = {};
 
 const todomall = (props: Props) => {
-  return <div>todomall</div>;
+  return (
+    <>
+      <div>todomall</div>
+      <GNB />
+    </>
+  );
 };
-
-todomall.getLayout = (page: ReactNode) => (
-  <>
-    {page}
-    <GNB />
-  </>
-);
 
 export default todomall;

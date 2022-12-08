@@ -22,7 +22,6 @@ const SplashScreen = () => {
 
 const Wrapper = styled.div`
   width: 100%;
-  max-width: 950px;
   height: 100vh;
   display: flex;
   align-items: center;

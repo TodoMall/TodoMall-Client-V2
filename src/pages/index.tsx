@@ -1,5 +1,7 @@
-import Test from 'src/components/Test';
+import styled from '@emotion/styled';
 
 export default function Home() {
-  return <Test />;
+  return <div>Home</div>;
 }
+
+const Container = styled.div``;

@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "cypress:open": "cypress open",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -46,6 +47,7 @@
     "@types/graphql": "^14.5.0",
     "@types/sharp": "^0",
     "babel-loader": "^8.3.0",
+    "cypress": "^12.1.0",
     "eslint-plugin-storybook": "^0.6.7"
   },
   "packageManager": "yarn@3.3.0"

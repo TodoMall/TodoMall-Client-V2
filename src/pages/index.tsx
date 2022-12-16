@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
+import React from 'react';
 
 export default function Home() {
-  return <div>Home</div>;
+  return <Wrapper>Home</Wrapper>;
 }
 
-const Container = styled.div``;
+const Wrapper = styled.div``;

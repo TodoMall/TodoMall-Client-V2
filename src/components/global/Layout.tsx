@@ -1,31 +1,32 @@
-import React from 'react';
 import styled from '@emotion/styled';
+import React from 'react';
+import THEME from '../../constants/Colors';
 
-interface Props {
-  children: React.ReactNode;
-}
-
-const Layout = ({ children }: Props) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <Wrapper>
+    <Background>
       <Container>{children}</Container>
-    </Wrapper>
+    </Background>
   );
 };
 
-const Wrapper = styled.div`
+const Background = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
-  background: #d2c6ff;
+  margin: 0 auto;
+  background: ${THEME.PURPLE50};
 `;
 
 const Container = styled.div`
   position: relative;
-  width: min(100%, 59.375rem);
   height: 100%;
   margin: 0 auto;
-  background: #fbfbfb;
+  max-width: 900px;
+  background: ${THEME.BACKGROUND1};
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default Layout;

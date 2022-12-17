@@ -24,7 +24,7 @@ export default function Document() {
         <meta name="theme-color" content="#FBFBFB" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="application-name" content="KIDA" />
+        <meta name="application-name" content="TodoMall" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="TodoMall" />

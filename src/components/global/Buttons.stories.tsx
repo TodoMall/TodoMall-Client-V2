@@ -30,7 +30,7 @@ export default {
   },
 } as ComponentMeta<typeof Button>;
 
-const Template: Story<ButtonProps> = (args) => <Button {...args}>제출하기</Button>;
+const Template: Story<ButtonProps> = (args) => <Button {...args}>모범예시 보러가기</Button>;
 
 export const Primary = Template.bind({});
 

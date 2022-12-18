@@ -9,18 +9,17 @@ type Variant = 'Primary' | 'Warning' | 'Bordered' | 'Cancel' | 'Disabled';
 
 type Size = 'Small' | 'Large';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant: Variant;
   size: Size;
   rounder: boolean;
-  text?: string;
   loading?: boolean;
   onClick?: () => void;
 }
 
-const Button = ({ children, onClick, loading, ...props }: ButtonProps) => {
+const Button = ({ children, onClick, loading, variant, size, rounder }: ButtonProps) => {
   return (
-    <Container onClick={onClick} {...props}>
+    <Container onClick={onClick} variant={variant} size={size} rounder={rounder}>
       {loading ? <MoonLoader color={THEME.PURPLE300} size={25} /> : children}
     </Container>
   );

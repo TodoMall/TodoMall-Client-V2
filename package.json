@@ -51,6 +51,8 @@
     "babel-loader": "^8.3.0",
     "cypress": "^12.1.0",
     "eslint-plugin-storybook": "^0.6.7",
+    "react-docgen-typescript": "^2.2.2",
+    "react-docgen-typescript-loader": "^3.7.2",
     "tsconfig-paths-webpack-plugin": "^4.0.0"
   },
   "packageManager": "yarn@3.3.0"

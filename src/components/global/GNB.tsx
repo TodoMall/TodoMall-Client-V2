@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import THEME from '@src/constants/Colors';
 import { PATHS } from '@src/constants/Paths';
+import { Paths } from '@src/types/GNB.type';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { MypageIcon, TodoBoxIcon, TodoMallIcon } from '../icons/GNBIcons';
@@ -8,11 +9,11 @@ import { MypageIcon, TodoBoxIcon, TodoMallIcon } from '../icons/GNBIcons';
 const GNB = () => {
   const { replace, pathname } = useRouter();
 
-  const handleClick = (path: string) => {
+  const handleClick = (path: Paths) => {
     replace(path);
   };
 
-  const checkActive = (path: string) => {
+  const isActive = (path: Paths) => {
     return pathname === path;
   };
 
@@ -23,24 +24,24 @@ const GNB = () => {
           handleClick(PATHS.TODOBOX);
         }}
       >
-        <TodoBoxIcon selected={checkActive(PATHS.TODOBOX)} />
-        <ColumnTitle active={checkActive(PATHS.TODOBOX)}>투두함</ColumnTitle>
+        <TodoBoxIcon selected={isActive(PATHS.TODOBOX)} />
+        <ColumnTitle active={isActive(PATHS.TODOBOX)}>투두함</ColumnTitle>
       </Column>
       <Column
         onClick={() => {
           handleClick(PATHS.TODOMALL);
         }}
       >
-        <TodoMallIcon selected={checkActive(PATHS.TODOMALL)} />
-        <ColumnTitle active={checkActive(PATHS.TODOMALL)}>투두몰</ColumnTitle>
+        <TodoMallIcon selected={isActive(PATHS.TODOMALL)} />
+        <ColumnTitle active={isActive(PATHS.TODOMALL)}>투두몰</ColumnTitle>
       </Column>
       <Column
         onClick={() => {
           handleClick(PATHS.MYPAGE);
         }}
       >
-        <MypageIcon selected={checkActive(PATHS.MYPAGE)} />
-        <ColumnTitle active={checkActive(PATHS.MYPAGE)}>내 기록</ColumnTitle>
+        <MypageIcon selected={isActive(PATHS.MYPAGE)} />
+        <ColumnTitle active={isActive(PATHS.MYPAGE)}>내 기록</ColumnTitle>
       </Column>
     </Container>
   );

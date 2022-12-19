@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
-import Button from '@src/components/global/Buttons';
+import Button from '@src/components/global/Button';
 import React from 'react';
 import { useState } from 'react';
 
 export default function Home() {
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <Wrapper>
@@ -12,9 +12,9 @@ export default function Home() {
         variant="Primary"
         size="Large"
         rounder={false}
-        loading={loading}
+        isLoading={isLoading}
         onClick={() => {
-          setLoading(!loading);
+          setIsLoading(!isLoading);
         }}
       >
         제출하기
@@ -23,9 +23,9 @@ export default function Home() {
         variant="Bordered"
         size="Small"
         rounder={true}
-        loading={loading}
+        isLoading={isLoading}
         onClick={() => {
-          setLoading(!loading);
+          setIsLoading(!isLoading);
         }}
       >
         모범예시 보러가기

@@ -18,14 +18,13 @@ const Background = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
-  margin: 0 auto;
   background: ${THEME.PURPLE50};
 `;
 
 const Container = styled.div`
   position: relative;
   height: 100%;
-  margin: 0 auto;
+  margin: auto;
   max-width: 900px;
   background: ${THEME.BACKGROUND1};
   display: flex;

@@ -2,26 +2,23 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import THEME from '@src/constants/Colors';
 import WIDTHS from '@src/constants/Widths';
+import { Size, Variant } from '@src/types/Button.type';
 import React, { ButtonHTMLAttributes } from 'react';
 import MoonLoader from 'react-spinners/MoonLoader';
-
-type Variant = 'Primary' | 'Warning' | 'Bordered' | 'Cancel' | 'Disabled';
-
-type Size = 'Small' | 'Large';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant: Variant;
   size: Size;
   rounder: boolean;
-  loading?: boolean;
-  onClick?: () => void;
+  isLoading?: boolean;
 }
 
-const Button = ({ children, onClick, loading, variant, size, rounder }: ButtonProps) => {
+const Button = ({ children, onClick, isLoading, variant, size, rounder }: ButtonProps) => {
   return (
-    <Container onClick={onClick} variant={variant} size={size} rounder={rounder}>
-      {loading ? <MoonLoader color={THEME.PURPLE300} size={25} /> : children}
-    </Container>
+    <StyledButton onClick={onClick} variant={variant} size={size} rounder={rounder}>
+      {/* To be fixed */}
+      {isLoading ? <MoonLoader color={THEME.PURPLE300} size={25} /> : children}
+    </StyledButton>
   );
 };
 
@@ -45,6 +42,8 @@ const ButtonColor = (variant: Variant) => {
       return THEME.WHITE;
     case 'Disabled':
       return THEME.GRAY200;
+    default:
+      const errorCheck: never = variant;
   }
 };
 
@@ -62,7 +61,6 @@ const ButtonStyle = ({ variant }: { variant: Variant }) => {
       return css`
         color: ${THEME.WHITE};
         border: 1px solid ${THEME.PURPLE500};
-        background-color: ${THEME.PURPLE500};
         &:active {
           background-color: ${THEME.PURPLE700};
         }
@@ -71,12 +69,10 @@ const ButtonStyle = ({ variant }: { variant: Variant }) => {
       return css`
         color: ${THEME.WHITE};
         border: 1px solid ${THEME.ERROR};
-        background-color: ${THEME.ERROR};
       `;
     case 'Bordered':
       return css`
         color: ${THEME.PURPLE500};
-        background-color: ${THEME.WHITE};
         border: 1px solid ${THEME.PURPLE500};
         &:active {
           border: 1px solid ${THEME.PURPLE700};
@@ -85,9 +81,7 @@ const ButtonStyle = ({ variant }: { variant: Variant }) => {
     case 'Cancel':
       return css`
         color: ${THEME.GRAY500};
-        background-color: ${THEME.WHITE};
         border: 1px solid ${THEME.GRAY200};
-
         &:active {
           border: 1px solid ${THEME.GRAY300};
         }
@@ -95,7 +89,6 @@ const ButtonStyle = ({ variant }: { variant: Variant }) => {
     case 'Disabled':
       return css`
         color: ${THEME.WHITE};
-        background-color: ${THEME.GRAY200};
         pointer-events: none;
         user-select: none;
         border: 1px solid ${THEME.GRAY200};
@@ -103,14 +96,14 @@ const ButtonStyle = ({ variant }: { variant: Variant }) => {
   }
 };
 
-const Container = styled.button<ButtonProps>`
+const StyledButton = styled.button<ButtonProps>`
   width: ${({ size }) => ButtonSize(size)}rem;
   height: 3.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: ${({ rounder }) => ButtonRadius(rounder)}rem;
-  background-color: ${({ variant }) => ButtonColor(variant)}rem;
+  background-color: ${({ variant }) => ButtonColor(variant)};
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.5rem;

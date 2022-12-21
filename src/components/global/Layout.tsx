@@ -5,21 +5,12 @@ import GNB from './GNB';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <Background>
-      <Container>
-        {children}
-        <GNB />
-      </Container>
-    </Background>
+    <Container>
+      {children}
+      <GNB />
+    </Container>
   );
 };
-
-const Background = styled.div`
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: ${THEME.PURPLE50};
-`;
 
 const Container = styled.div`
   position: relative;

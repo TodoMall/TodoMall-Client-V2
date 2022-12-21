@@ -1,1 +1,1 @@
-export type Paths = '/todomall' | '/todobox' | '/mypage';
+export type Path = '/todomall' | '/todobox' | '/mypage';

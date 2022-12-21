@@ -1,9 +1,7 @@
 import React from 'react';
 
-type Props = {};
-
-const todomall = (props: Props) => {
+const TodoMall = () => {
   return <div>todomall</div>;
 };
 
-export default todomall;
+export default TodoMall;

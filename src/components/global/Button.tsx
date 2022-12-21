@@ -16,18 +16,10 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Button = ({ children, onClick, isLoading, variant, size, rounder }: ButtonProps) => {
   return (
     <StyledButton onClick={onClick} variant={variant} size={size} rounder={rounder}>
-      {/* To be fixed */}
+      {/* FIXME: Change loader component when design is fixed */}
       {isLoading ? <MoonLoader color={THEME.PURPLE300} size={25} /> : children}
     </StyledButton>
   );
-};
-
-const ButtonSize = (size: Size) => {
-  if (size === 'Small') {
-    return WIDTHS.BUTTON_SMALL;
-  } else {
-    return WIDTHS.BUTTON_LARGE;
-  }
 };
 
 const ButtonColor = (variant: Variant) => {
@@ -50,9 +42,9 @@ const ButtonColor = (variant: Variant) => {
 const ButtonRadius = (rounder: boolean) => {
   if (rounder) {
     return WIDTHS.BUTTON_RADIUS_LARGE;
-  } else {
-    return WIDTHS.BUTTON_RADIUS_SMALL;
   }
+
+  return WIDTHS.BUTTON_RADIUS_SMALL;
 };
 
 const ButtonStyle = ({ variant }: { variant: Variant }) => {
@@ -93,11 +85,13 @@ const ButtonStyle = ({ variant }: { variant: Variant }) => {
         user-select: none;
         border: 1px solid ${THEME.GRAY200};
       `;
+    default:
+      const errorCheck: never = variant;
   }
 };
 
 const StyledButton = styled.button<ButtonProps>`
-  width: ${({ size }) => ButtonSize(size)}rem;
+  width: ${({ size }) => (size === 'Small' ? WIDTHS.BUTTON_SMALL : WIDTHS.BUTTON_LARGE)}rem;
   height: 3.25rem;
   display: flex;
   align-items: center;

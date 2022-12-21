@@ -1,9 +1,7 @@
 import React from 'react';
 
-type Props = {};
-
-const todobox = (props: Props) => {
+const TodoBox = () => {
   return <div>todobox</div>;
 };
 
-export default todobox;
+export default TodoBox;

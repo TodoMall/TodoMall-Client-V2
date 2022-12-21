@@ -27,7 +27,7 @@ const THEME = {
   WHITE: '#FFFFFF',
   BLACK: '#000000',
 
-  // To be fixed
+  // FIXME: Fix with better names
   BACKGROUND1: '#FBFBFB',
   BACKGROUND2: '#FAFAFF',
 } as const;

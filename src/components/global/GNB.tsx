@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import THEME from '@src/constants/Colors';
-import { PATHS } from '@src/constants/Paths';
-import { Paths } from '@src/types/GNB.type';
+import PATHS from '@src/constants/Paths';
+import { Path } from '@src/types/GNB.type';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { MypageIcon, TodoBoxIcon, TodoMallIcon } from '../icons/GNBIcons';
@@ -9,11 +9,11 @@ import { MypageIcon, TodoBoxIcon, TodoMallIcon } from '../icons/GNBIcons';
 const GNB = () => {
   const { replace, pathname } = useRouter();
 
-  const handleClick = (path: Paths) => {
+  const handleClick = (path: Path) => {
     replace(path);
   };
 
-  const isActive = (path: Paths) => {
+  const isActive = (path: Path) => {
     return pathname === path;
   };
 
@@ -22,24 +22,21 @@ const GNB = () => {
       <Column
         onClick={() => {
           handleClick(PATHS.TODOBOX);
-        }}
-      >
+        }}>
         <TodoBoxIcon selected={isActive(PATHS.TODOBOX)} />
         <ColumnTitle active={isActive(PATHS.TODOBOX)}>투두함</ColumnTitle>
       </Column>
       <Column
         onClick={() => {
           handleClick(PATHS.TODOMALL);
-        }}
-      >
+        }}>
         <TodoMallIcon selected={isActive(PATHS.TODOMALL)} />
         <ColumnTitle active={isActive(PATHS.TODOMALL)}>투두몰</ColumnTitle>
       </Column>
       <Column
         onClick={() => {
           handleClick(PATHS.MYPAGE);
-        }}
-      >
+        }}>
         <MypageIcon selected={isActive(PATHS.MYPAGE)} />
         <ColumnTitle active={isActive(PATHS.MYPAGE)}>내 기록</ColumnTitle>
       </Column>

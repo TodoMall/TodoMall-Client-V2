@@ -57,7 +57,7 @@
     "react-docgen-typescript-loader": "^3.7.2",
     "tsconfig-paths-webpack-plugin": "^4.0.0"
   },
-  "packageManager": "yarn@3.3.0",
+  "packageManager": "yarn@3.3.1",
   "readme": "ERROR: No README data found!",
   "_id": "TodoMall-Client-V2@0.1.0"
 }

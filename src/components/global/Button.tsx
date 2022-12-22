@@ -1,8 +1,8 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import THEME from '@src/constants/Colors';
-import WIDTHS from '@src/constants/Widths';
-import { Size, Variant } from '@src/types/Button.type';
+import THEME from '@src/common/constants/Colors';
+import WIDTHS from '@src/common/constants/Widths';
+import { Size, Variant } from '@src/common/types/Button.type';
 import React, { ButtonHTMLAttributes } from 'react';
 import MoonLoader from 'react-spinners/MoonLoader';
 

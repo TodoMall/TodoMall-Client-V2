@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import THEME from '../../constants/Colors';
+import THEME from '../../common/constants/Colors';
 import GNB from './GNB';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {

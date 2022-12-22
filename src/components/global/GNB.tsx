@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import THEME from '@src/constants/Colors';
-import PATHS from '@src/constants/Paths';
-import { Path } from '@src/types/GNB.type';
+import THEME from '@src/common/constants/Colors';
+import PATHS from '@src/common/constants/Paths';
+import { Path } from '@src/common/types/GNB.type';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { MypageIcon, TodoBoxIcon, TodoMallIcon } from '../icons/GNBIcons';

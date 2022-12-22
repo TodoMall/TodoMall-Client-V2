@@ -1,4 +1,4 @@
-import '@src/styles/globals.css';
+import '@src/common/styles/globals.css';
 import type { AppProps } from 'next/app';
 import React from 'react';
 import { RecoilRoot } from 'recoil';

@@ -9,7 +9,8 @@
     "lint": "next lint",
     "cypress:open": "cypress open",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic"
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",
@@ -20,15 +21,17 @@
     "@types/react-dom": "18.0.9",
     "eslint": "^8.28.0",
     "eslint-config-next": "13.0.5",
+    "eslint-plugin-prettier": "^4.2.1",
     "framer-motion": "^7.6.18",
     "graphql": "^16.6.0",
     "next": "13.0.5",
     "next-pwa": "^5.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-spinners": "^0.13.7",
     "recoil": "^0.7.6",
     "sharp": "^0.31.2",
-    "storybook-addon-next-router": "^4.0.1",
+    "storybook-addon-next-router": "^4.0.2",
     "typescript": "4.9.3"
   },
   "devDependencies": {
@@ -47,8 +50,14 @@
     "@types/graphql": "^14.5.0",
     "@types/sharp": "^0",
     "babel-loader": "^8.3.0",
+    "chromatic": "^6.13.1",
     "cypress": "^12.1.0",
-    "eslint-plugin-storybook": "^0.6.7"
+    "eslint-plugin-storybook": "^0.6.7",
+    "react-docgen-typescript": "^2.2.2",
+    "react-docgen-typescript-loader": "^3.7.2",
+    "tsconfig-paths-webpack-plugin": "^4.0.0"
   },
-  "packageManager": "yarn@3.3.0"
+  "packageManager": "yarn@3.3.1",
+  "readme": "ERROR: No README data found!",
+  "_id": "TodoMall-Client-V2@0.1.0"
 }

@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import THEME from '@src/common/constants/Colors';
+import COLOR from '@src/common/constants/Colors';
 import WIDTHS from '@src/common/constants/Widths';
 import { Size, Variant } from '@src/common/types/Button.type';
 import React, { ButtonHTMLAttributes } from 'react';
@@ -17,7 +17,7 @@ const Button = ({ children, onClick, isLoading, variant, size, rounder }: Button
   return (
     <StyledButton onClick={onClick} variant={variant} size={size} rounder={rounder}>
       {/* FIXME: Change loader component when design is fixed */}
-      {isLoading ? <MoonLoader color={THEME.PURPLE300} size={25} /> : children}
+      {isLoading ? <MoonLoader color={COLOR.PURPLE300} size={25} /> : children}
     </StyledButton>
   );
 };
@@ -25,15 +25,15 @@ const Button = ({ children, onClick, isLoading, variant, size, rounder }: Button
 const ButtonColor = (variant: Variant) => {
   switch (variant) {
     case 'Primary':
-      return THEME.PURPLE500;
+      return COLOR.PURPLE500;
     case 'Warning':
-      return THEME.ERROR;
+      return COLOR.ERROR;
     case 'Bordered':
-      return THEME.WHITE;
+      return COLOR.WHITE;
     case 'Cancel':
-      return THEME.WHITE;
+      return COLOR.WHITE;
     case 'Disabled':
-      return THEME.GRAY200;
+      return COLOR.GRAY200;
     default:
       const errorCheck: never = variant;
   }
@@ -51,39 +51,39 @@ const ButtonStyle = ({ variant }: { variant: Variant }) => {
   switch (variant) {
     case 'Primary':
       return css`
-        color: ${THEME.WHITE};
-        border: 1px solid ${THEME.PURPLE500};
+        color: ${COLOR.WHITE};
+        border: 1px solid ${COLOR.PURPLE500};
         &:active {
-          background-color: ${THEME.PURPLE700};
+          background-color: ${COLOR.PURPLE700};
         }
       `;
     case 'Warning':
       return css`
-        color: ${THEME.WHITE};
-        border: 1px solid ${THEME.ERROR};
+        color: ${COLOR.WHITE};
+        border: 1px solid ${COLOR.ERROR};
       `;
     case 'Bordered':
       return css`
-        color: ${THEME.PURPLE500};
-        border: 1px solid ${THEME.PURPLE500};
+        color: ${COLOR.PURPLE500};
+        border: 1px solid ${COLOR.PURPLE500};
         &:active {
-          border: 1px solid ${THEME.PURPLE700};
+          border: 1px solid ${COLOR.PURPLE700};
         }
       `;
     case 'Cancel':
       return css`
-        color: ${THEME.GRAY500};
-        border: 1px solid ${THEME.GRAY200};
+        color: ${COLOR.GRAY500};
+        border: 1px solid ${COLOR.GRAY200};
         &:active {
-          border: 1px solid ${THEME.GRAY300};
+          border: 1px solid ${COLOR.GRAY300};
         }
       `;
     case 'Disabled':
       return css`
-        color: ${THEME.WHITE};
+        color: ${COLOR.WHITE};
         pointer-events: none;
         user-select: none;
-        border: 1px solid ${THEME.GRAY200};
+        border: 1px solid ${COLOR.GRAY200};
       `;
     default:
       const errorCheck: never = variant;

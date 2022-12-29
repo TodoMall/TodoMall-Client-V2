@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import THEME from '@src/common/constants/Colors';
+import COLOR from '@src/common/constants/Colors';
 import PATHS from '@src/common/constants/Paths';
 import { Path } from '@src/common/types/GNB.type';
 import { useRouter } from 'next/router';
@@ -52,7 +52,7 @@ const Container = styled.div`
   padding-bottom: 2.125rem;
   display: flex;
   align-items: center;
-  background-color: ${THEME.BACKGROUND1};
+  background-color: ${COLOR.BACKGROUND1};
 `;
 
 const Column = styled.div`
@@ -67,7 +67,7 @@ const Column = styled.div`
 const ColumnTitle = styled.p<{ active: boolean }>`
   font-size: 0.625rem;
   line-height: 0.75rem;
-  color: ${(props) => (props.active ? `${THEME.PURPLE500}` : `${THEME.GRAY400}`)};
+  color: ${(props) => (props.active ? `${COLOR.PURPLE500}` : `${COLOR.GRAY400}`)};
   margin: 0.25rem 0;
 `;
 

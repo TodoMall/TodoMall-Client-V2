@@ -1,15 +1,9 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import THEME from '../../common/constants/Colors';
-import GNB from './GNB';
+import COLOR from '../../common/constants/Colors';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <Container>
-      {children}
-      <GNB />
-    </Container>
-  );
+  return <Container>{children}</Container>;
 };
 
 const Container = styled.div`
@@ -17,7 +11,7 @@ const Container = styled.div`
   height: 100%;
   margin: auto;
   max-width: 900px;
-  background: ${THEME.BACKGROUND1};
+  background: ${COLOR.BACKGROUND1};
   display: flex;
   align-items: center;
   justify-content: center;

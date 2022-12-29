@@ -1,4 +1,4 @@
-const THEME = {
+const COLOR = {
   PURPLE50: '#F1EFFF',
   PURPLE100: '#E2DBFF',
   PURPLE200: '#D2C6FF',
@@ -32,4 +32,4 @@ const THEME = {
   BACKGROUND2: '#FAFAFF',
 } as const;
 
-export default THEME;
+export default COLOR;

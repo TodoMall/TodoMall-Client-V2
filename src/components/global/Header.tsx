@@ -13,7 +13,7 @@ const Header = ({ isBack = false, text }: HeaderProps) => {
 
   return (
     <Container>
-      <BackArrowIcon onClick={back} isBack />
+      <BackArrowIcon onClick={back} isBack={isBack} />
       <Title>{text}</Title>
     </Container>
   );

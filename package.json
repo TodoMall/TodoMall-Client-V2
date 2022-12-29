@@ -10,8 +10,7 @@
     "cypress:open": "cypress open",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -s public",
-    "deploy-storybook": "storybook-to-ghpages",
-    "chromatic": "npx chromatic"
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",

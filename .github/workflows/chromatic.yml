@@ -6,21 +6,38 @@ name: 'Storybook Deployment on Chromatic'
 # Event for the workflow
 on: push
 
-# List of jobs
+# # List of jobs
+# jobs:
+#   chromatic-deployment:
+#     # Operating System
+#     runs-on: ubuntu-latest
+#     # Job steps
+#     steps:
+#       - uses: actions/checkout@v1
+#       - name: Install dependencies
+#         # 👇 Install dependencies with the same package manager used in the project (replace it as needed) e.g. yarn, npm, pnpm
+#         run: yarn
+#         # 👇 Adds Chromatic as a step in the workflow
+#       - name: Publish to Chromatic
+#         uses: chromaui/action-next@v1
+#         # Chromatic GitHub Action options
+#         with:
+#           # 👇 Chromatic projectToken, refer to the manage page to obtain it.
+#           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
 jobs:
-  chromatic-deployment:
-    # Operating System
+  build-and-deploy:
     runs-on: ubuntu-latest
-    # Job steps
     steps:
-      - uses: actions/checkout@v1
-      - name: Install dependencies
-        # 👇 Install dependencies with the same package manager used in the project (replace it as needed) e.g. yarn, npm, pnpm
-        run: yarn
-        # 👇 Adds Chromatic as a step in the workflow
-      - name: Publish to Chromatic
-        uses: chromaui/action-next@v1
-        # Chromatic GitHub Action options
+      - name: Checkout
+        uses: actions/checkout@v2.3.1
+
+      - name: Install and Build
+        run: |
+          yarn run build-storybook
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
-          # 👇 Chromatic projectToken, refer to the manage page to obtain it.
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          branch: gh-pages
+          folder: storybook-static # output folder from `npm run build-storybook`

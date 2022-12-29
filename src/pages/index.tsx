@@ -1,15 +1,21 @@
 import styled from '@emotion/styled';
 import COLOR from '@src/common/constants/Colors';
-import Button from '@src/components/global/Button';
+import SOCIAL from '@src/common/constants/Social';
 import { GoogleLogin, KakaoLogin } from '@src/components/icons/SocialLoginIcons';
 import SplashScreen from '@src/components/login/SplashScreen';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const { push } = useRouter();
+
+  const handleLogin = (path: string) => {
+    push(path);
+  };
 
   useEffect(() => {
     const splash = setTimeout(() => {
@@ -29,7 +35,11 @@ export default function Home() {
     <Container initial={{ y: 200, opacity: 0 }} transition={{ duration: 0.8 }} whileInView={{ opacity: 1, y: 0 }}>
       <Logo alt="TodoMall" src="/assets/LoginLogo.png" width={200} height={65} />
       <LoginButtons>
-        <KakaoLogin onClick={() => {}} />
+        <KakaoLogin
+          onClick={() => {
+            handleLogin(SOCIAL.KAKAO_PATH);
+          }}
+        />
         <GoogleLogin onClick={() => {}} />
         <CompanyButton onClick={() => {}}>c. myplanit</CompanyButton>
       </LoginButtons>

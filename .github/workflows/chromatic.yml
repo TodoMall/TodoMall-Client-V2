@@ -34,6 +34,7 @@ jobs:
 
       - name: Install and Build
         run: |
+          yarn
           yarn run build-storybook
 
       - name: Deploy

@@ -3,6 +3,7 @@ import COLOR from '@src/common/constants/Colors';
 import Button from '@src/components/global/Button';
 import { GoogleLogin, KakaoLogin } from '@src/components/icons/SocialLoginIcons';
 import SplashScreen from '@src/components/login/SplashScreen';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
@@ -25,7 +26,7 @@ export default function Home() {
   }
 
   return (
-    <Container>
+    <Container initial={{ y: 200, opacity: 0 }} transition={{ duration: 0.8 }} whileInView={{ opacity: 1, y: 0 }}>
       <Logo alt="TodoMall" src="/assets/LoginLogo.png" width={200} height={65} />
       <LoginButtons>
         <KakaoLogin onClick={() => {}} />
@@ -36,7 +37,7 @@ export default function Home() {
   );
 }
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   width: 100%;
   height: 100%;
 

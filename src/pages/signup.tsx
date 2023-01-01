@@ -1,19 +1,15 @@
 import styled from '@emotion/styled';
+import { AgreementState } from '@src/common/recoil/atoms/AgreementAtom';
 import COLOR from '@src/common/constants/Colors';
+import { isFinishedAgreementState } from '@src/common/recoil/selectors/AgreementSelector';
 import Button from '@src/components/global/Button';
 import Header from '@src/components/global/Header';
 import { CheckBoxIcon, DetailIcon } from '@src/components/icons/SystemIcons';
-import React, { useState } from 'react';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
 const Signup = () => {
-  const [agreement, setAgreement] = useState({
-    service: true,
-    personal: true,
-  });
-
-  const checkBothAgreement = () => {
-    return agreement.service === true && agreement.personal === true;
-  };
+  const [agreement, setAgreement] = useRecoilState(AgreementState);
+  const { isFinishedAgreement } = useRecoilValue(isFinishedAgreementState);
 
   return (
     <Container>
@@ -61,7 +57,7 @@ const Signup = () => {
             <DetailIcon onClick={() => {}} />
           </AgreementRow>
         </AgreementTable>
-        <Button variant={checkBothAgreement() ? 'Primary' : 'Disabled'} size="Large" rounder={false}>
+        <Button variant={isFinishedAgreement ? 'Primary' : 'Disabled'} size="Large" rounder={false}>
           동의하기
         </Button>
       </Footer>

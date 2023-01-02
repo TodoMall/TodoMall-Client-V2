@@ -33,14 +33,18 @@ export default function Home() {
 
   return (
     <Container initial={{ y: 200, opacity: 0 }} transition={{ duration: 0.8 }} whileInView={{ opacity: 1, y: 0 }}>
-      <Logo alt="TodoMall" src="/assets/LoginLogo.png" width={200} height={65} />
+      <Logo alt="TodoMall" src="/assets/LoginLogo.png" width={200} height={60} />
       <LoginButtons>
         <KakaoLogin
           onClick={() => {
             handleLogin(SOCIAL.KAKAO_PATH);
           }}
         />
-        <GoogleLogin onClick={() => {}} />
+        <GoogleLogin
+          onClick={() => {
+            push('signup');
+          }}
+        />
         <CompanyButton onClick={() => {}}>c. myplanit</CompanyButton>
       </LoginButtons>
     </Container>

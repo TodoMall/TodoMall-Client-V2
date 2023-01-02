@@ -6,10 +6,13 @@ import Button from '@src/components/global/Button';
 import Header from '@src/components/global/Header';
 import { CheckBoxIcon, DetailIcon } from '@src/components/icons/SystemIcons';
 import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRouter } from 'next/router';
 
 const Signup = () => {
   const [agreement, setAgreement] = useRecoilState(AgreementState);
   const { isFinishedAgreement } = useRecoilValue(isFinishedAgreementState);
+
+  const { push } = useRouter();
 
   return (
     <Container>
@@ -37,7 +40,11 @@ const Signup = () => {
             <RowText>
               <span>(필수)</span> 서비스 이용약관 동의
             </RowText>
-            <DetailIcon onClick={() => {}} />
+            <DetailIcon
+              onClick={() => {
+                push('/terms/service');
+              }}
+            />
           </AgreementRow>
           <Divider />
           <AgreementRow>
@@ -54,7 +61,11 @@ const Signup = () => {
             <RowText>
               <span>(필수)</span> 개인정보 처리방침 동의
             </RowText>
-            <DetailIcon onClick={() => {}} />
+            <DetailIcon
+              onClick={() => {
+                push('/terms/personal');
+              }}
+            />
           </AgreementRow>
         </AgreementTable>
         <Button variant={isFinishedAgreement ? 'Primary' : 'Disabled'} size="Large" rounder={false}>

@@ -1,4 +1,3 @@
-import Header from '@src/components/global/Header';
 import { useRouter } from 'next/router';
 import React from 'react';
 

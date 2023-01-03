@@ -1,13 +1,8 @@
-import GNB from '@src/components/global/GNB';
+import MainPageLayout from '@src/components/global/MainPageLayout';
 import React from 'react';
 
 const TodoMall = () => {
-  return (
-    <div>
-      todomall
-      <GNB />
-    </div>
-  );
+  return <MainPageLayout>todomall</MainPageLayout>;
 };
 
 export default TodoMall;

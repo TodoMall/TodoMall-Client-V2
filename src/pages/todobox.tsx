@@ -1,13 +1,8 @@
-import GNB from '@src/components/global/GNB';
+import MainPageLayout from '@src/components/global/MainPageLayout';
 import React from 'react';
 
 const TodoBox = () => {
-  return (
-    <div>
-      todobox
-      <GNB />
-    </div>
-  );
+  return <MainPageLayout>todobox</MainPageLayout>;
 };
 
 export default TodoBox;

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import Header from '@src/components/global/Header';
+import { Header } from '@src/components/global/Header';
 import React from 'react';
 
 export const getStaticProps = async () => {

@@ -1,13 +1,8 @@
-import GNB from '@src/components/global/GNB';
+import MainPageLayout from '@src/components/global/MainPageLayout';
 import React from 'react';
 
 const MyPage = () => {
-  return (
-    <div>
-      mypage
-      <GNB />
-    </div>
-  );
+  return <MainPageLayout>mypage</MainPageLayout>;
 };
 
 export default MyPage;

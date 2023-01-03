@@ -15,7 +15,11 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button = ({ children, onClick, isLoading, variant, size, rounder }: ButtonProps) => {
   return (
-    <StyledButton onClick={onClick} variant={variant} size={size} rounder={rounder}>
+    <StyledButton
+      onClick={variant !== 'Disabled' ? onClick : undefined}
+      variant={variant}
+      size={size}
+      rounder={rounder}>
       {/* FIXME: Change loader component when design is fixed */}
       {isLoading ? <MoonLoader color={COLOR.PURPLE300} size={25} /> : children}
     </StyledButton>

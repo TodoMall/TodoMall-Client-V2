@@ -3,16 +3,21 @@ import { AgreementState } from '@src/common/recoil/atoms/AgreementAtom';
 import COLOR from '@src/common/constants/Colors';
 import { isFinishedAgreementState } from '@src/common/recoil/selectors/AgreementSelector';
 import Button from '@src/components/global/Button';
-import Header from '@src/components/global/Header';
+import { Header } from '@src/components/global/Header';
 import { CheckBoxIcon, DetailIcon } from '@src/components/icons/SystemIcons';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { useRouter } from 'next/router';
+import PATHS from '@src/common/constants/Paths';
 
 const Signup = () => {
   const [agreement, setAgreement] = useRecoilState(AgreementState);
   const { isFinishedAgreement } = useRecoilValue(isFinishedAgreementState);
 
   const { push } = useRouter();
+
+  const handleClick = () => {
+    push(PATHS.TODOBOX);
+  };
 
   return (
     <Container>
@@ -68,7 +73,11 @@ const Signup = () => {
             />
           </AgreementRow>
         </AgreementTable>
-        <Button variant={isFinishedAgreement ? 'Primary' : 'Disabled'} size="Large" rounder={false}>
+        <Button
+          variant={isFinishedAgreement ? 'Primary' : 'Disabled'}
+          onClick={handleClick}
+          size="Large"
+          rounder={false}>
           동의하기
         </Button>
       </Footer>

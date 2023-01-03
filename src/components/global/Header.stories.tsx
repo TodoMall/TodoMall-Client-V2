@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentMeta, Meta, Story } from '@storybook/react';
-import Header, { HeaderProps } from './Header';
+import { Header, HeaderProps } from './Header';
 
 export default {
   title: 'Header',
@@ -24,3 +24,7 @@ MainHeader.args = {
   text: '회원가입',
   isBack: false,
 };
+
+export const LogoHeader = Template.bind({});
+
+LogoHeader.args = {};

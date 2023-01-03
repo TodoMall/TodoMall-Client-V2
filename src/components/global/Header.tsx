@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import COLOR from '@src/common/constants/Colors';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { BackArrowIcon } from '../icons/SystemIcons';
@@ -9,7 +10,7 @@ export interface HeaderProps {
   text: string;
 }
 
-const Header = ({ isBack = false, text }: HeaderProps) => {
+export const Header = ({ isBack = false, text }: HeaderProps) => {
   const { back } = useRouter();
 
   return (
@@ -22,6 +23,12 @@ const Header = ({ isBack = false, text }: HeaderProps) => {
   );
 };
 
+export const LogoHeader = () => (
+  <Container>
+    <Image src="/assets/HeaderLogo.png" alt="HeaderLogo" width={148} height={32} />
+  </Container>
+);
+
 const Container = styled.div`
   width: 100%;
   height: 3rem;
@@ -30,7 +37,7 @@ const Container = styled.div`
   left: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background-color: ${COLOR.BACKGROUND1};
 `;
 
@@ -49,5 +56,3 @@ const Title = styled.p`
   font-size: 1rem;
   line-height: 1.5rem;
 `;
-
-export default Header;

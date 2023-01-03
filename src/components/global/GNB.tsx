@@ -49,10 +49,12 @@ const Container = styled.div`
   height: 3.5rem;
   width: 100%;
   bottom: 0;
+  left: 0;
   padding-bottom: 2.125rem;
   display: flex;
   align-items: center;
-  background-color: ${COLOR.BACKGROUND1};
+  background-color: ${COLOR.WHITE};
+  border-top: 1px solid ${COLOR.GRAY50};
 `;
 
 const Column = styled.div`

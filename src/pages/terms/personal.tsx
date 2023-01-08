@@ -1,6 +1,9 @@
 import styled from '@emotion/styled';
+import { togglePersonal } from '@src/common/redux/slices/agreementSlice';
+import Button from '@src/components/global/Button';
 import { Header } from '@src/components/global/Header';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 export const getStaticProps = async () => {
   const data = `
@@ -158,10 +161,24 @@ export const getStaticProps = async () => {
 };
 
 const Personal = ({ html }: { html: string }) => {
+  const dispatch = useDispatch();
+
   return (
     <Container>
       <Header text="개인정보 처리방침" isBack />
       <HTMLDiv dangerouslySetInnerHTML={{ __html: html }} />
+      <Footer>
+        <Button
+          variant="Primary"
+          size="Large"
+          rounder={false}
+          isLoading={false}
+          onClick={() => {
+            dispatch(togglePersonal());
+          }}>
+          제출하기
+        </Button>
+      </Footer>
     </Container>
   );
 };
@@ -172,6 +189,15 @@ const Container = styled.div`
 `;
 
 const HTMLDiv = styled.div`
-  padding: 3rem 1.2rem;
+  padding: 0 1.2rem;
+  padding-top: 3rem;
 `;
+
+const Footer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+`;
+
 export default Personal;

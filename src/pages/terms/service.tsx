@@ -1,6 +1,9 @@
 import styled from '@emotion/styled';
+import { toggleService } from '@src/common/redux/slices/agreementSlice';
+import Button from '@src/components/global/Button';
 import { Header } from '@src/components/global/Header';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 export const getStaticProps = async () => {
   const data = `
@@ -118,10 +121,24 @@ export const getStaticProps = async () => {
 };
 
 const Service = ({ html }: { html: string }) => {
+  const dispatch = useDispatch();
+
   return (
     <Container>
       <Header text="서비스 이용약관" isBack />
       <HTMLDiv dangerouslySetInnerHTML={{ __html: html }} />
+      <Footer>
+        <Button
+          variant="Primary"
+          size="Large"
+          rounder={false}
+          isLoading={false}
+          onClick={() => {
+            dispatch(toggleService());
+          }}>
+          제출하기
+        </Button>
+      </Footer>
     </Container>
   );
 };
@@ -133,6 +150,13 @@ const Container = styled.div`
 
 const HTMLDiv = styled.div`
   padding: 3rem 1.2rem;
+`;
+
+const Footer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
 `;
 
 export default Service;

@@ -65,7 +65,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-docgen-typescript", "virtual:44a78929efcbdf16b38537c7933c515d00ba0a76f804739948378f18d21d900fe2dbb551f95903126a64ffe98af3d43001b6458008dc766cc2c8798ef5b4f36b#npm:2.2.2"],\
             ["react-docgen-typescript-loader", "virtual:44a78929efcbdf16b38537c7933c515d00ba0a76f804739948378f18d21d900fe2dbb551f95903126a64ffe98af3d43001b6458008dc766cc2c8798ef5b4f36b#npm:3.7.2"],\
             ["react-dom", "virtual:44a78929efcbdf16b38537c7933c515d00ba0a76f804739948378f18d21d900fe2dbb551f95903126a64ffe98af3d43001b6458008dc766cc2c8798ef5b4f36b#npm:18.2.0"],\
-            ["react-spinners", "virtual:44a78929efcbdf16b38537c7933c515d00ba0a76f804739948378f18d21d900fe2dbb551f95903126a64ffe98af3d43001b6458008dc766cc2c8798ef5b4f36b#npm:0.13.7"],\
             ["react-transition-group", "virtual:44a78929efcbdf16b38537c7933c515d00ba0a76f804739948378f18d21d900fe2dbb551f95903126a64ffe98af3d43001b6458008dc766cc2c8798ef5b4f36b#npm:4.4.5"],\
             ["recoil", "virtual:44a78929efcbdf16b38537c7933c515d00ba0a76f804739948378f18d21d900fe2dbb551f95903126a64ffe98af3d43001b6458008dc766cc2c8798ef5b4f36b#npm:0.7.6"],\
             ["sharp", "npm:0.31.2"],\
@@ -8967,7 +8966,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-docgen-typescript", "virtual:44a78929efcbdf16b38537c7933c515d00ba0a76f804739948378f18d21d900fe2dbb551f95903126a64ffe98af3d43001b6458008dc766cc2c8798ef5b4f36b#npm:2.2.2"],\
             ["react-docgen-typescript-loader", "virtual:44a78929efcbdf16b38537c7933c515d00ba0a76f804739948378f18d21d900fe2dbb551f95903126a64ffe98af3d43001b6458008dc766cc2c8798ef5b4f36b#npm:3.7.2"],\
             ["react-dom", "virtual:44a78929efcbdf16b38537c7933c515d00ba0a76f804739948378f18d21d900fe2dbb551f95903126a64ffe98af3d43001b6458008dc766cc2c8798ef5b4f36b#npm:18.2.0"],\
-            ["react-spinners", "virtual:44a78929efcbdf16b38537c7933c515d00ba0a76f804739948378f18d21d900fe2dbb551f95903126a64ffe98af3d43001b6458008dc766cc2c8798ef5b4f36b#npm:0.13.7"],\
             ["react-transition-group", "virtual:44a78929efcbdf16b38537c7933c515d00ba0a76f804739948378f18d21d900fe2dbb551f95903126a64ffe98af3d43001b6458008dc766cc2c8798ef5b4f36b#npm:4.4.5"],\
             ["recoil", "virtual:44a78929efcbdf16b38537c7933c515d00ba0a76f804739948378f18d21d900fe2dbb551f95903126a64ffe98af3d43001b6458008dc766cc2c8798ef5b4f36b#npm:0.7.6"],\
             ["sharp", "npm:0.31.2"],\
@@ -20495,32 +20493,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/react-refresh-npm-0.11.0-c0a4e59e76-112178a05b.zip/node_modules/react-refresh/",\
           "packageDependencies": [\
             ["react-refresh", "npm:0.11.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["react-spinners", [\
-        ["npm:0.13.7", {\
-          "packageLocation": "./.yarn/cache/react-spinners-npm-0.13.7-12aaab79e3-d7a555b423.zip/node_modules/react-spinners/",\
-          "packageDependencies": [\
-            ["react-spinners", "npm:0.13.7"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:44a78929efcbdf16b38537c7933c515d00ba0a76f804739948378f18d21d900fe2dbb551f95903126a64ffe98af3d43001b6458008dc766cc2c8798ef5b4f36b#npm:0.13.7", {\
-          "packageLocation": "./.yarn/__virtual__/react-spinners-virtual-93ffadd02f/0/cache/react-spinners-npm-0.13.7-12aaab79e3-d7a555b423.zip/node_modules/react-spinners/",\
-          "packageDependencies": [\
-            ["react-spinners", "virtual:44a78929efcbdf16b38537c7933c515d00ba0a76f804739948378f18d21d900fe2dbb551f95903126a64ffe98af3d43001b6458008dc766cc2c8798ef5b4f36b#npm:0.13.7"],\
-            ["@types/react", "npm:18.0.25"],\
-            ["@types/react-dom", "npm:18.0.9"],\
-            ["react", "npm:18.2.0"],\
-            ["react-dom", "virtual:44a78929efcbdf16b38537c7933c515d00ba0a76f804739948378f18d21d900fe2dbb551f95903126a64ffe98af3d43001b6458008dc766cc2c8798ef5b4f36b#npm:18.2.0"]\
-          ],\
-          "packagePeers": [\
-            "@types/react-dom",\
-            "@types/react",\
-            "react-dom",\
-            "react"\
           ],\
           "linkType": "HARD"\
         }]\

@@ -1,10 +1,10 @@
-import { css } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import COLOR from '@src/common/constants/Colors';
 import WIDTHS from '@src/common/constants/Widths';
 import { Size, Variant } from '@src/common/types/Button.type';
 import React, { ButtonHTMLAttributes } from 'react';
-import MoonLoader from 'react-spinners/MoonLoader';
+import { LoaderIcon } from '../icons/SystemIcons';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant: Variant;
@@ -20,8 +20,13 @@ const Button = ({ children, onClick, isLoading, variant, size, rounder }: Button
       variant={variant}
       size={size}
       rounder={rounder}>
-      {/* FIXME: Change loader component when design is fixed */}
-      {isLoading ? <MoonLoader color={COLOR.PURPLE300} size={25} /> : children}
+      {isLoading ? (
+        <LoaderWrapper>
+          <LoaderIcon isBlack={variant !== 'Canceled' && variant !== 'Bordered'} />
+        </LoaderWrapper>
+      ) : (
+        children
+      )}
     </StyledButton>
   );
 };
@@ -141,6 +146,22 @@ const StyledButton = styled.button<ButtonProps>`
 
   /* Additional Button Style for different variants */
   ${ButtonStyle}
+`;
+
+const rotation = keyframes`
+    from{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+
+`;
+const LoaderWrapper = styled.div`
+  animation: ${rotation} 1s linear infinite;
+  width: 18px;
+  height: 18px;
 `;
 
 export default Button;

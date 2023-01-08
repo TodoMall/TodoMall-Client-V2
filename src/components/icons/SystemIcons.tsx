@@ -46,3 +46,15 @@ export const DetailIcon = ({ onClick }: { onClick: () => void }) => (
     <path d="M10 17L15 12L10 7" stroke="#C0C0C0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
   </svg>
 );
+
+export const LoaderIcon = ({ isBlack }: { isBlack: boolean }) => (
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M16.5302 9.0007C16.5302 13.1607 13.1602 16.5307 9.00022 16.5307C4.84022 16.5307 1.47021 13.1607 1.47021 9.0007C1.47021 4.8407 4.84022 1.4707 9.00022 1.4707"
+      stroke={isBlack ? 'white' : '#222222'}
+      stroke-width="1.5"
+      stroke-miterlimit="10"
+      stroke-linecap="round"
+    />
+  </svg>
+);

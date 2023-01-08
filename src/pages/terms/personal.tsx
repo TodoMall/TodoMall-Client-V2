@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { togglePersonal } from '@src/common/redux/slices/agreementSlice';
 import Button from '@src/components/global/Button';
 import { Header } from '@src/components/global/Header';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -162,7 +163,7 @@ export const getStaticProps = async () => {
 
 const Personal = ({ html }: { html: string }) => {
   const dispatch = useDispatch();
-
+  const { push } = useRouter();
   return (
     <Container>
       <Header text="개인정보 처리방침" isBack />
@@ -175,6 +176,7 @@ const Personal = ({ html }: { html: string }) => {
           isLoading={false}
           onClick={() => {
             dispatch(togglePersonal());
+            push('/signup');
           }}>
           제출하기
         </Button>

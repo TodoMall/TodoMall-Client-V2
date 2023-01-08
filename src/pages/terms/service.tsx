@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { toggleService } from '@src/common/redux/slices/agreementSlice';
 import Button from '@src/components/global/Button';
 import { Header } from '@src/components/global/Header';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -122,6 +123,7 @@ export const getStaticProps = async () => {
 
 const Service = ({ html }: { html: string }) => {
   const dispatch = useDispatch();
+  const { push } = useRouter();
 
   return (
     <Container>
@@ -135,6 +137,7 @@ const Service = ({ html }: { html: string }) => {
           isLoading={false}
           onClick={() => {
             dispatch(toggleService());
+            push('/signup');
           }}>
           제출하기
         </Button>

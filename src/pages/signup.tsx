@@ -1,17 +1,17 @@
 import styled from '@emotion/styled';
-import { AgreementState } from '@src/common/recoil/atoms/AgreementAtom';
 import COLOR from '@src/common/constants/Colors';
-import { isFinishedAgreementState } from '@src/common/recoil/selectors/AgreementSelector';
 import Button from '@src/components/global/Button';
 import { Header } from '@src/components/global/Header';
 import { CheckBoxIcon, DetailIcon } from '@src/components/icons/SystemIcons';
-import { useRecoilState, useRecoilValue } from 'recoil';
 import { useRouter } from 'next/router';
 import PATHS from '@src/common/constants/Paths';
+import { RootState } from '@src/common/redux/store';
+import { useSelector, useDispatch } from 'react-redux';
+import { togglePersonal, toggleService } from '@src/common/redux/slices/agreementSlice';
 
 const Signup = () => {
-  const [agreement, setAgreement] = useRecoilState(AgreementState);
-  const { isFinishedAgreement } = useRecoilValue(isFinishedAgreementState);
+  const { personal, service } = useSelector((store: RootState) => store.agreement);
+  const dispatch = useDispatch();
 
   const { push } = useRouter();
 
@@ -34,13 +34,9 @@ const Signup = () => {
           <AgreementRow>
             <CheckBoxIcon
               onClick={() => {
-                setAgreement((prev) => {
-                  let temp = { ...prev };
-                  temp.service = !prev.service;
-                  return temp;
-                });
+                dispatch(toggleService());
               }}
-              isActive={agreement.service}
+              isActive={service}
             />
             <RowText>
               <span>(필수)</span> 서비스 이용약관 동의
@@ -55,13 +51,9 @@ const Signup = () => {
           <AgreementRow>
             <CheckBoxIcon
               onClick={() => {
-                setAgreement((prev) => {
-                  let temp = { ...prev };
-                  temp.personal = !prev.personal;
-                  return temp;
-                });
+                dispatch(togglePersonal());
               }}
-              isActive={agreement.personal}
+              isActive={personal}
             />
             <RowText>
               <span>(필수)</span> 개인정보 처리방침 동의
@@ -74,7 +66,7 @@ const Signup = () => {
           </AgreementRow>
         </AgreementTable>
         <Button
-          variant={isFinishedAgreement ? 'Primary' : 'Disabled'}
+          variant={personal && service ? 'Primary' : 'Disabled'}
           onClick={handleClick}
           size="Large"
           rounder={false}>

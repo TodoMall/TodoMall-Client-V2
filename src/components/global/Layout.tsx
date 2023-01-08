@@ -11,7 +11,7 @@ const Container = styled.div`
   height: 100%;
   margin: auto;
   max-width: 900px;
-  background: ${COLOR.BACKGROUND1};
+  background: ${COLOR.BACKGROUND50};
   display: flex;
   align-items: center;
   justify-content: center;

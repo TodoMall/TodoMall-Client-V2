@@ -17,7 +17,7 @@ const MainPageLayout = ({ children }: { children: React.ReactNode }) => {
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  background-color: ${COLOR.BACKGROUND2};
+  background-color: ${COLOR.BACKGROUND100};
 `;
 
 export default MainPageLayout;

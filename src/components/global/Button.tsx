@@ -30,11 +30,17 @@ const ButtonColor = (variant: Variant) => {
   switch (variant) {
     case 'Primary':
       return COLOR.PURPLE500;
+    case 'Error':
+      return COLOR.ERROR500;
+    case 'Success':
+      return COLOR.SUCCESS500;
+    case 'Information':
+      return COLOR.INFORMATION500;
     case 'Warning':
-      return COLOR.ERROR;
+      return COLOR.WARNING500;
     case 'Bordered':
       return COLOR.WHITE;
-    case 'Cancel':
+    case 'Canceled':
       return COLOR.WHITE;
     case 'Disabled':
       return COLOR.GRAY200;
@@ -61,10 +67,37 @@ const ButtonStyle = ({ variant }: { variant: Variant }) => {
           background-color: ${COLOR.PURPLE700};
         }
       `;
+    case 'Error':
+      return css`
+        color: ${COLOR.WHITE};
+        border: 1px solid ${COLOR.ERROR500};
+        &:active {
+          background-color: ${COLOR.ERROR700};
+        }
+      `;
+    case 'Success':
+      return css`
+        color: ${COLOR.WHITE};
+        border: 1px solid ${COLOR.SUCCESS500};
+        &:active {
+          background-color: ${COLOR.SUCCESS700};
+        }
+      `;
+    case 'Information':
+      return css`
+        color: ${COLOR.WHITE};
+        border: 1px solid ${COLOR.INFORMATION500};
+        &:active {
+          background-color: ${COLOR.INFORMATION700};
+        }
+      `;
     case 'Warning':
       return css`
         color: ${COLOR.WHITE};
-        border: 1px solid ${COLOR.ERROR};
+        border: 1px solid ${COLOR.WARNING500};
+        &:active {
+          background-color: ${COLOR.WARNING700};
+        }
       `;
     case 'Bordered':
       return css`
@@ -74,7 +107,7 @@ const ButtonStyle = ({ variant }: { variant: Variant }) => {
           border: 1px solid ${COLOR.PURPLE700};
         }
       `;
-    case 'Cancel':
+    case 'Canceled':
       return css`
         color: ${COLOR.GRAY500};
         border: 1px solid ${COLOR.GRAY200};

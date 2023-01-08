@@ -11,7 +11,7 @@ export default {
       type: { name: 'string', required: true },
       description: 'variant color',
       control: 'radio',
-      options: ['Primary', 'Warning', 'Bordered', 'Cancel', 'Disabled'],
+      options: ['Primary', 'Error', 'Success', 'Information', 'Warning', 'Bordered', 'Canceled', 'Disabled'],
     },
     size: {
       name: 'Button Size',
@@ -40,6 +40,38 @@ Primary.args = {
   rounder: false,
 };
 
+export const Error = Template.bind({});
+
+Error.args = {
+  variant: 'Error',
+  size: 'Large',
+  rounder: false,
+};
+
+export const Success = Template.bind({});
+
+Success.args = {
+  variant: 'Success',
+  size: 'Large',
+  rounder: false,
+};
+
+export const Information = Template.bind({});
+
+Information.args = {
+  variant: 'Information',
+  size: 'Large',
+  rounder: false,
+};
+
+export const Warning = Template.bind({});
+
+Warning.args = {
+  variant: 'Warning',
+  size: 'Large',
+  rounder: false,
+};
+
 export const Bordered = Template.bind({});
 
 Bordered.args = {
@@ -56,18 +88,10 @@ Disabled.args = {
   rounder: false,
 };
 
-export const Warning = Template.bind({});
-
-Warning.args = {
-  variant: 'Warning',
-  size: 'Large',
-  rounder: false,
-};
-
 export const Cancel = Template.bind({});
 
 Cancel.args = {
-  variant: 'Cancel',
+  variant: 'Canceled',
   size: 'Large',
   rounder: false,
 };

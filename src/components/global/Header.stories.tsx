@@ -24,7 +24,3 @@ MainHeader.args = {
   text: '회원가입',
   isBack: false,
 };
-
-export const LogoHeader = Template.bind({});
-
-LogoHeader.args = {};

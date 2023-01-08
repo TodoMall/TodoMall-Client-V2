@@ -38,7 +38,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${COLOR.BACKGROUND1};
+  background-color: ${COLOR.BACKGROUND50};
 `;
 
 const ButtonWrapper = styled.div`
